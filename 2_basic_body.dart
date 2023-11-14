@@ -54,6 +54,28 @@ class HomePage extends StatelessWidget {
           }
         },
       ),
+      body: Row(
+        children: [
+          Container(
+            //padding: EdgeInsets.all(200),
+            margin: EdgeInsets.all(20),
+            height: 100,
+            width: 150,
+            decoration: BoxDecoration(
+              color: Colors.amber,
+            ),
+          ),
+          Container(
+            //padding: EdgeInsets.all(200),
+            margin: EdgeInsets.all(20),
+            height: 100,
+            width: 150,
+            decoration: BoxDecoration(
+              color: Colors.amber,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
