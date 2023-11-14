@@ -54,28 +54,28 @@ class HomePage extends StatelessWidget {
           }
         },
       ),
-      body: Row(
-        children: [
-          Container(
-            //padding: EdgeInsets.all(200),
-            margin: EdgeInsets.all(20),
-            height: 100,
-            width: 150,
-            decoration: BoxDecoration(
-              color: Colors.amber,
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.star),
+                Text('Star 1')
+              ],
             ),
-          ),
-          Container(
-            //padding: EdgeInsets.all(200),
-            margin: EdgeInsets.all(20),
-            height: 100,
-            width: 150,
-            decoration: BoxDecoration(
-              color: Colors.amber,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.star),
+                Text('Star 2'),
+              ],
             ),
-          )
-        ],
+          ],
+        ),
       ),
+
     );
   }
 }
