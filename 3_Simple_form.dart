@@ -50,6 +50,15 @@ class HomePage extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.desk),label: 'Counter')
         ],
         currentIndex: 1,
+        onTap: (index){
+          if(index == 0){
+            mySnackBar('Station', context);
+          }else if(index == 1){
+            mySnackBar('Home', context);
+          }else if(index ==2){
+            mySnackBar('Cash Counter', context);
+          }
+        },
       ),
     );
   }
