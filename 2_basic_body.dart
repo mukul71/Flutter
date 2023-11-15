@@ -24,6 +24,19 @@ class HomePage extends StatelessWidget {
   mySnackBar(message,context){
     return ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
   }
+
+  myAlertDialog(context){
+    return showDialog(context: context, builder: (BuildContext context){
+      return Expanded(child: AlertDialog(
+        title: Text('Alert'),
+        content: Text('Are sure to Delete?'),
+        actions: [
+          TextButton(onPressed: (){}, child: Text('Yes')),
+          TextButton(onPressed: (){}, child: Text('No')),
+        ],
+      ));
+    });
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -49,32 +62,43 @@ class HomePage extends StatelessWidget {
             return mySnackBar('Business', context);
           }else if(index ==1){
             return mySnackBar('Home', context);
-          }else if(index == 2){
+         }else if(index == 2){
             return mySnackBar('School', context) ;
           }
         },
       ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+      body:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Row(
               children: [
-                Icon(Icons.star),
-                Text('Star 1')
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.star),
+                    Text('Star 1')
+                  ],
+
+                ), Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.star),
+                    Text('Star 2')
+                  ],
+
+                ),
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.star),
-                Text('Star 2'),
-              ],
-            ),
-          ],
-        ),
-      ),
+          ),
+          Row(
+            children: [
+              ElevatedButton(onPressed: (){myAlertDialog(context);}, child: Text('Delete')),
+            ],
+          ),
+        ],
+      )
+
 
     );
   }
