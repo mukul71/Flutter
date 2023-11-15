@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
         child: Icon(Icons.check),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        
+
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.local_gas_station),label: 'Station'),
           BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
@@ -59,6 +59,15 @@ class HomePage extends StatelessWidget {
             mySnackBar('Cash Counter', context);
           }
         },
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(padding: EdgeInsets.all(20), child: TextField(decoration: InputDecoration(border:OutlineInputBorder(),labelText: 'First name'),),),
+          Padding(padding: EdgeInsets.all(20),child: TextField(decoration: InputDecoration(border:OutlineInputBorder(),labelText: 'Last name' ),),),
+          Padding(padding: EdgeInsets.all(20),child: TextField(decoration: InputDecoration(border :OutlineInputBorder(),labelText: 'Email'),),),
+          ElevatedButton(onPressed: (){}, child: Text('Submit'),style: ),
+        ],
       ),
     );
   }
