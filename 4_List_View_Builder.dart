@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mySnackBar(message,context){
-      return ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+      return ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message),duration: Duration(seconds: 1),));
     }
 
 
@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.check),
-        onPressed: (){},
+        onPressed: (){mySnackBar('I am FAB', context);},
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -53,6 +53,15 @@ class HomeScreen extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.business),label: 'Business'),
         ],
         currentIndex: 1,
+        onTap: (index){
+          if(index == 0){
+            mySnackBar('Shop', context);
+          }else if (index ==1){
+            mySnackBar('Home', context);
+          }else if(index == 2){
+            mySnackBar('Business', context);
+          }
+        },
       ),
     );
   }
