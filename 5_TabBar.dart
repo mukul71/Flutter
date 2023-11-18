@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -7,14 +8,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-        //tabBarTheme: TabBarTheme(indicatorColor: Colors.white),
-        appBarTheme: AppBarTheme(backgroundColor: Colors.blueAccent,
-            foregroundColor: Colors.white),
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: HomePage(),);
+      home: HomePage(),
+    );
   }
 }
 class HomePage extends StatelessWidget {
@@ -23,40 +18,36 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 8,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('My App'),
-          bottom: TabBar(
-            isScrollable:true,
-            unselectedLabelColor: Colors.white,
-            tabs: [
-              Tab(icon: Icon(Icons.home),text: 'HOme',),
-              Tab(icon: Icon(Icons.search),text: 'Search',),
-              Tab(icon: Icon(Icons.email),text: 'Email',),
-              Tab(icon: Icon(Icons.settings),text: 'Settings',),
-              Tab(icon: Icon(Icons.comment),text: 'Comment',),
-              Tab(icon: Icon(Icons.person),text: 'Person',),
-              Tab(icon: Icon(Icons.access_alarm),text: 'Alarm',),
-              Tab(icon: Icon(Icons.account_balance),text: 'Balance',),
+        length: 8, 
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('gasMe'),
+            bottom: TabBar(
+              isScrollable: true,
+                tabs: [
+              Tab(icon: Icon(Icons.home),text: 'Home',),
+                  Tab(icon: Icon(Icons.email),text: 'Email',),
+                  Tab(icon: Icon(Icons.comment),text: 'Comment',),
+                  Tab(icon: Icon(Icons.shop),text: 'Shop',),
+                  Tab(icon: Icon(Icons.school),text: 'School',),
+                  Tab(icon: Icon(Icons.business),text: 'Business',),
+                  Tab(icon: Icon(Icons.settings),text: 'Settings',),
+                  Tab(icon: Icon(Icons.search),text: 'Search',),
+            ]),
+          ),
+          body: TabBarView(
+            children: [
+              Text('Home'),
+              Text('Email'),
+              Text('Comment'),
+              Text('Shop'),
+              Text('School'),
+              Text('Business'),
+              Text('Settings'),
+              Text('Search'),
 
             ],
           ),
-        ),
-       body: TabBarView(
-         children: [
-            Text('Homoe'),
-           Text('Search'),
-           Text('Email'),
-           Text('Settings'),
-           Text('Comment'),
-           Text('Per0son'),
-           Text('Alarm'),
-           Text('Balance'),
-         ],
-       ),
-      ),);
+        ),);
   }
 }
-
-
