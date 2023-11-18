@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'Screens/businessScreen.dart';
+import 'Screens/commentScreen.dart';
+import 'Screens/emailScreen.dart';
+import 'Screens/homeScreen.dart';
+import 'Screens/schoolScreen.dart';
+import 'Screens/searchScreen.dart';
+import 'Screens/settingsScreen.dart';
+import 'Screens/shopScreen.dart';
+
+
 main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -37,14 +47,22 @@ class HomePage extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Text('Home'),
-              Text('Email'),
-              Text('Comment'),
-              Text('Shop'),
-              Text('School'),
-              Text('Business'),
-              Text('Settings'),
-              Text('Search'),
+              // Text('Home'),
+              // Text('Email'),
+              // Text('Comment'),
+              // Text('Shop'),
+              // Text('School'),
+              // Text('Business'),
+              // Text('Settings'),
+              // Text('Search'),
+             homeScreen(),
+              emailScreen(),
+              commentScreen(),
+              shopScreen(),
+              schoolScreen(),
+              businessScreen(),
+              settingsScreen(),
+              searchScreen(),
 
             ],
           ),
