@@ -35,23 +35,36 @@ class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Page One'),),
       body: Center(
-        child:Text('Page 1')
+        child: Row(
+          children: [
+            ElevatedButton(onPressed: (){}, child: Text(" Go Home")),
+            ElevatedButton(onPressed: (){}, child: Text(" Page Two")),
+          ],
+        ),
       ),
     );
   }
 }
 
-class Page1 extends StatelessWidget {
-  const Page1({super.key});
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child:Text('Page 1')
-      ),
+    return Scaffold(appBar: AppBar(title: Text('Page Two'),),
+    body: Center(
+      child:Row(
+        children: [
+          ElevatedButton(onPressed: (){}, child: Text('Go Home')),
+          ElevatedButton(onPressed: (){}, child: Text('Page One'))
+        ],
+      )
+
+    ),
     );
   }
 }
+
 
