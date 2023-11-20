@@ -74,3 +74,39 @@ class PageOne extends StatelessWidget {
     );
   }
 }
+
+import 'package:flutter/material.dart';
+import 'package:passing_data/Pages/PageOne.dart';
+import 'package:passing_data/main.dart';
+
+class PageTwo extends StatelessWidget {
+  const PageTwo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Page Two'),
+      ),
+      body: Center(
+        child: Row(
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
+                },
+                child: Text('Go Home')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PageOne()));
+                },
+                child: Text('Page One')),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
